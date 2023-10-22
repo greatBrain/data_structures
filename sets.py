@@ -56,6 +56,22 @@ def get_difference():
 
 
 
+# Unifying two or more sets:
+def get_union():
+    set_x = {"Perla", "Lucas", "George", "Maria"}
+    set_y = {"Arlinna", "Andrea", "Mirabal", "Jose"}
+    print("Set x:", set_x, " ", "set_y:", set_y, "\n")
+
+    '''In some cases, we may need to unify two or more sets for some purpose, 
+    the standard way to do that is using Python set built-in method named union (just like mathematics)'''
+
+    set_Z = set_x.union(set_y)
+    return ("Conjunto unificado", set_Z)
+
+print(get_union())
+
+
+
 
 
 ''' Practice '''
@@ -69,8 +85,8 @@ def is_anagram(first_word=str, second_word=str):
        return False    
     return True
 
-print(is_anagram("ROMA", "OMZAR"), "\n")
-print(is_anagram("IEVL", "LIVE"), "\n")
+#print(is_anagram("ROMA", "OMZAR"), "\n")
+#print(is_anagram("IEVL", "LIVE"), "\n")
 
 '''As we can see in the above code, the function 'is_anagram' is executed twice
 the first one recives two str parameter, a little bit differents and should return False because we can not get a anagram.
@@ -79,3 +95,27 @@ should return True.'''
 
 
 
+
+
+
+''' Diving deeper'''
+''' ============'''
+
+
+'''There's another built-in type of sets in Python named 'frozenset' (sounds like an horror movie, right? :V ) 
+which is in all respects exactly like a set, except that a frozenset is immutable (indeed). 
+What can u do with it? You can perform non-modifying operations on a frozenset:
+'''
+
+def get_frozenset():
+
+    f = frozenset(['foo', 'bar', 'baz'])
+
+    ''' Without any operation that attempt to modify the set object, we can do every operation on it, like a normal set:'''
+    print(len(f))
+
+    #Compare with other:
+    n = {'bird', 'block', 'bass'}
+    print(f & n)
+
+    '''Frozensets are useful in situations where we want to use a set, but we need an immutable object'''
