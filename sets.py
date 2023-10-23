@@ -63,12 +63,19 @@ def get_union():
     print("Set x:", set_x, " ", "set_y:", set_y, "\n")
 
     '''In some cases, we may need to unify two or more sets for some purpose, 
-    the standard way to do that is using Python set built-in method named union (just like mathematics)'''
-
+    As the others operations there are two ways to do that: Using Python set built-in method named union (just like mathematics) 
+    or by operators:'''
+    
+    #Union by method.
     set_Z = set_x.union(set_y)
-    return ("Conjunto unificado", set_Z)
+    print("Conjunto unificado por metodo:", set_Z)
 
-print(get_union())
+
+    #Union by operator:
+    set_op = set_x | set_y
+    print("Conjunto unificado por operador:", set_op)
+
+#get_union()
 
 
 
@@ -119,3 +126,14 @@ def get_frozenset():
     print(f & n)
 
     '''Frozensets are useful in situations where we want to use a set, but we need an immutable object'''
+
+
+
+#Set comprehension.
+#As lists, sets can be comprehenssed:
+
+def set_comprehension():
+    p = {a+a for a in range(10)}
+    print(p)
+
+set_comprehension()   
